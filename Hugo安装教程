@@ -1,9 +1,9 @@
-# 如何用 Hugo 快速搭建自己的博客
+# 如何用 Hugo 快速搭建自己的博客，简单教程
 
 ## 目录
 
 1. 安装 Hugo
-2. 创建一个新的网站
+2. 创建一个新的站点
 3. 添加一个主题
 4. 添加一些内容
 5. 启动 Hugo 服务器
@@ -11,5 +11,67 @@
 7. 构建静态页面
 
 ## 第一步 安装 Hugo
-    [点击下载安装](https://gohugo.io/getting-started/installing)
-    [简书](http://jianshu.com)
+
+[点击下载安装](https://gohugo.io/getting-started/installing)
+
+然后确认在命令含输入
+```bash
+hugo version
+```
+
+## 第二步 创建一个新的站点
+```bash
+hugo new site quickstart
+```
+
+## 第三步 添加一个主题
+```bash
+cd quickstart
+git init
+git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+```
+
+然后，吧主题添加到站点的配置文件
+```bash
+echo 'theme = "ananke"' >> config.toml
+```
+##第四步 添加一些内容
+用 `new` 命令去修改一下标题和日期
+```bash
+hugo new posts/my-first-post.md
+```
+
+编辑第一个博文，类似下面那样
+```
+---
+title: "My First Post"
+date: 2020-01-10T17:06:11+01:00
+draft: true
+---
+```
+
+## 第五步 启动 Hugo 服务器
+
+```
+hugo server -D
+```
+然后访问  http://localhost:1313/ 即可
+
+## 第六步 定制你的主题
+
+打开配置文件 `config.toml` ：
+```
+baseURL = "https://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "ananke"
+```
+
+## 第七步 创建静态页面文件夹
+```
+hugo -D
+```
+
+会在当前目录启动 `./public/` 
+
+### 以上内容参考[官方文档](https://gohugo.io/getting-started/quick-start/)的快速启动编写的
