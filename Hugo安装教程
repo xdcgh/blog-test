@@ -1,0 +1,15 @@
+# 如何用 Hugo 快速搭建自己的博客
+
+## 目录
+
+1. 安装 Hugo
+2. 创建一个新的网站
+3. 添加一个主题
+4. 添加一些内容
+5. 启动 Hugo 服务器
+6. 定制主题和配置
+7. 构建静态页面
+
+## 第一步 安装 Hugo
+    [点击下载安装](https://gohugo.io/getting-started/installing)
+    [简书](http://jianshu.com)
